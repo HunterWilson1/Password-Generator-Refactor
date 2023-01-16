@@ -21,3 +21,17 @@ function getPasswordCriteria(){
 
 var length = prompt("Enter the length of the password (at least 8 and 128 characters");
 
+
+// Prompts for inclusions
+
+var lowercase = confirm("Include lowercase characters?");
+
+
+var uppercase = confirm("include uppercase characters?");
+
+var numeric = confirm("include numberic characters?")
+
+var special = confirm("Include special characters?")
+
+// Validation
+
