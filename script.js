@@ -48,3 +48,27 @@ function getPasswordCriteria() {
   }
   return passwordCriteria;
 }
+
+
+function generatePassword(passwordCriteria) {
+  var length = passwordCriteria.length;
+  var lowercase = passwordCriteria.lowercase;
+  var uppercase = passwordCriteria.uppercase;
+  var numeric = passwordCriteria.numeric;
+  var special = passwordCriteria.special;
+  var password = "";
+
+  var characters = "";
+  if (lowercase) {
+    characters += "abcdefghijklmnopqrstuvwxyz";
+  }
+  if (uppercase) {
+    characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+  if (numeric) {
+    characters += "01234546789";
+  }
+  if (special) {
+    characters += "!@#%^&*()_+-=[]{};':\"\\|,.<>/?";
+  }
+}
