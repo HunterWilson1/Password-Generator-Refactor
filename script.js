@@ -9,7 +9,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-console.log(generateBtn)
 
 const lowercase = "abcdefghijklmnopqrstuvwxyz";
 
@@ -21,10 +20,10 @@ const special = "!@#%^&*()_+-=[]{};':,.<>/?";
 
 let characters ="";
 
-
+//first function is to generate a password. I used if/else statements to select the criteria
 function generatePassword() {
   let passwordLength = prompt("Choose a length between 8 and 128 characters.");
-  if (passwordLength < 8 || passwordLength > 128 ||isNaN(parseInt(passwordLength))) {
+  if (passwordLength < 8 || passwordLength > 128) {
     alert("Please enter a number between 8 and 128");
   } else {
     let lowerCase = confirm("Do you want to use lower case characters?");
@@ -35,7 +34,7 @@ function generatePassword() {
     if(upperCase){
       characters += uppercase
     };
-    let numeric = confirm("Do you want to use numeric characters?");
+    let numericCharacters = confirm("Do you want to use numeric characters?");
     if (numeric){
       characters += numeric
     };
@@ -44,9 +43,21 @@ function generatePassword() {
       characters += special
     };
 
-    
+    if (
+      lowerCase === false &&
+      upperCase === false &&
+      special === false &&
+      numeric === false
+    ){
+      alert("Please select one charcter type.");
+      generatePassword();
+    }
+  }
+
+  //
   let password = "";
   for (var i = 0; i < passwordLength; i++) {
     password += characters.charAt(Math.floor(Math.random() * characters.length));
   }
   return password;
+}
