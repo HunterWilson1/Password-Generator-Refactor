@@ -10,15 +10,15 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-const lowercase = "abcdefghijklmnopqrstuvwxyz";
+const lower = "abcdefghijklmnopqrstuvwxyz";
 
-const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-const numeric = "01234546789";
+const numb = "01234546789";
 
-const special = "!@#%^&*()_+-=[]{};':,.<>/?";
+const spec = "#$%&()*+<=>?@";
 
-let characters ="";
+let char ="";
 
 //first function is to generate a password. I used if/else statements to select the criteria
 function generatePassword() {
@@ -28,26 +28,26 @@ function generatePassword() {
   } else {
     let lowerCase = confirm("Do you want to use lower case characters?");
     if(lowerCase){
-      characters += lowercase
+      char += lower
     };
-    let uppercase = confirm("Do you want to use upper case characters?");
+    let upperCase = confirm("Do you want to use upper case characters?");
     if(upperCase){
-      characters += uppercase
+      char += upper
     };
-    let numericCharacters = confirm("Do you want to use numeric characters?");
-    if (numeric){
-      characters += numeric
+    let number = confirm("Do you want to use numeric characters?");
+    if (number){
+      char += numb
     };
-    let specialCharacters = confirm("Do you want to use special characters?");
+    let special = confirm("Do you want to use special characters?");
     if (special){
-      characters += special
+      char += spec
     };
 
     if (
       lowerCase === false &&
       upperCase === false &&
       special === false &&
-      numeric === false
+      number === false
     ){
       alert("Please select one charcter type.");
       generatePassword();
@@ -57,7 +57,7 @@ function generatePassword() {
   //
   let password = "";
   for (var i = 0; i < passwordLength; i++) {
-    password += characters.charAt(Math.floor(Math.random() * characters.length));
+    password += char.charAt(Math.floor(Math.random() * char.length));
   }
   return password;
 }
