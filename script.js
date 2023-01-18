@@ -7,7 +7,6 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to generate button
 
 const lower = "abcdefghijklmnopqrstuvwxyz";
 
@@ -56,7 +55,6 @@ function generatePassword() {
     console.log(char)
   }
 
-  //
   let password = "";
   for (var i = 0; i < passwordLength; i++) {
     password += char.charAt(Math.floor(Math.random() * char.length));
@@ -65,5 +63,6 @@ function generatePassword() {
   return password;
 }
 
+// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
