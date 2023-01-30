@@ -23,7 +23,7 @@ function generatePassword() {
   let passwordLength = prompt("Choose a length between 8 and 128 characters.");
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength) ) {
     alert("Please enter a number between 8 and 128");
-    generatePassword()
+    return generatePassword()
   } else {
     let lowerCase = confirm("Do you want to use lower case characters?");
     if (lowerCase) {
